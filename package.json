@@ -1,0 +1,18 @@
+{
+  "name": "codeorzo",
+  "version": "1.0.0",
+  "description": "social media application exclusively for coders",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "social"
+  ],
+  "author": "joy deb",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
