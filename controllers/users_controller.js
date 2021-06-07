@@ -6,6 +6,7 @@ module.exports.profile = function(req, res) {
 
 // Render the signIn up
 module.exports.signUp = function(req, res) {
+    // TODO: Later
     return res.render('user_sign_up', {
         title: 'Codeorzo | Signup',
     })
@@ -13,6 +14,7 @@ module.exports.signUp = function(req, res) {
 
 // Render the signIn page
 module.exports.signIn = function(req, res) {
+    // TODO: Later
     return res.render('user_sign_in', {
         title: 'Codeorzo | Signin',
     })
