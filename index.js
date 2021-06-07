@@ -1,3 +1,4 @@
+// Requiring all necessary libraries.
 const express = require('express');
 const app = express();
 const port = 8000;
@@ -7,7 +8,7 @@ app.use('/', require('./routes'));
 
 //setting up the view engine (ejs)
 app.set('view engine', 'ejs');
-app.set('view', './views');
+app.set('views', './views');
 
 //Listening to the port
 app.listen(port, function(err){
