@@ -4,7 +4,7 @@ const homeController = require('../controllers/home_controller');
 
 // Added Router for home (or root) url request
 router.get('/', homeController.home);
-
 router.use('/users', require('./users'));
+router.use('/posts', require('./posts'));
 
 module.exports = router;

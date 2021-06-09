@@ -12,10 +12,20 @@
 
     <section id="feed-posts">
         <h4>Posts</h4>
-        <form action="" id="new-post-form" method="post">
-            <textarea name="content" cols="30" rows="3"></textarea>
+        <form action="/posts/create" id="new-post-form" method="post">
+            <textarea name="content" cols="30" rows="3" placeholder="Type here..."></textarea>
             <input type="submit" value="post">
         </form>
     </section>
+
+    <% for (let i of post_list) { %>
+        <ul>
+            <li> 
+                <p><%= i.user.name %></p>
+                <h3><%= i.content %></h3>
+                <small> <%= i.createdAt %> </small>
+            </li>
+        </ul>
+    <% } %>
 </body>
 </html>
