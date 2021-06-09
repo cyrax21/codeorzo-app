@@ -11,6 +11,10 @@
     border-top: 1px solid #f5487f;
 }
 
+.heading a{
+    text-decoration: none;
+    color: white;
+}
 .heading{
     color: white;
     font-weight: bold;

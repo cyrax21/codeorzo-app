@@ -1,24 +1,44 @@
 body{
     background-color:#FFFFF0;
+    font-family: monospace;
 }
 
+/* Overall Styling */
 .profile-style{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.profile-heading{
+
+/* Indivitual card styling */
+.card-styling{
     display: flex;
     justify-content: space-between;
-    width: 500px;
-    border: 1px solid grey;
-
-    background-color: white;
+    align-items: center;
+    min-width: 650px;
+    max-width: 700px;
+    border: 1px solid white;
+    margin: 20px;
+    padding: 10px;
+    background-color:#FFF5EE;
+    box-shadow: 5px 5px 5px #f5487f;
 }
-.profile-heading img{
+
+/* Information inside card styling */
+.card-styling img{
     height: 150px;
     width: 150px;
-    border: 5px solid black;
+    border: 5px solid #f5487f;
     border-radius: 50%;
+    margin: 10px;
+}
+.card-info div{
+    font-weight: bold;
+    color: #f5487f;
+}
+
+/* About me Styling */
+.about-me-styling p{
+    font-size: 30px;
 }
