@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
     <title>Document</title>
 </head>
 <body>
-    <h1> Header </h1>
+    <div class="header-style">
+        <div class="heading">
+            &#60;Codeorzo🐶&#62;
+        </div>
+        <div class="auth-btn">
+            <% if(locals.user) { %>
+                <div>
+                    <a href="/users/profile">
+                        <%= user.name %> 
+                    </a>
+                </div>
+                <div>
+                    <a href="/users/sign-out"> Sign out </a>
+                </div>
+            <% } else { %>
+                <div>
+                    <a href="/users/sign-in"> Sign in </a>
+                </div>
+                <div>
+                    <a href="/users/sign-up"> Sign up </a>
+                </div>
+            <% } %>
+        </div>
+    </div>
 </body>
 </html>

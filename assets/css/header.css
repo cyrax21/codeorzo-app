@@ -1,0 +1,37 @@
+.header-style{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #122c91;
+    font-family: monospace;
+    border-bottom: 3px solid #f5487f;
+    border-top: 1px solid #f5487f;
+}
+
+.heading{
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.auth-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.auth-btn div{
+    border: 1px solid white;
+    color: white;
+    background-color: #f5487f;
+    padding: 10px;
+    margin: 5px;
+}
+.auth-btn div a{
+    text-decoration: none;
+    color: white;
+}

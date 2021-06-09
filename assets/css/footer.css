@@ -1,0 +1,52 @@
+/* whole footer styling */
+.footer-style{
+    background-color: #e0dede;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    height: 100px;
+    font-family: monospace;
+    margin-top: auto;
+}
+/* 1. Brand name Styling */
+.brand-name{
+    color: #f5487f;
+    font-weight: bold;
+    font-size: 30px;
+}
+.author{
+    font-size: 15px;
+    text-align: right;
+}
+
+/* Page Link Styling */
+.page-links{
+    text-align: center;
+}
+.page-links div a{
+    /* text-decoration: none; */
+    color: #f5487f;
+    font-weight: bold;
+}
+
+/* Social Media Handling Styling */
+.social-media{
+    text-align: center;
+}
+.social-media div{
+    font-size: 20px;
+    font-weight: bold;
+    color: #f5487f;
+    margin: 10px;
+}
+.social-media div a{
+    text-decoration: none;
+}
+.social-media div a i{
+    font-size: 30px;
+    font-weight: bold;
+    color: #f5487f;
+    padding: 5px;
+}
