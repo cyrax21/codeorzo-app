@@ -28,4 +28,29 @@ module.exports.create = function(req, res) {
             });
         }
     });
+};
+
+module.exports.destroy = function(req, res) {
+    Comment.findById(req.params.id, function(err, comment) {
+        if(err){
+            console.log(" Error: in finding the comment");
+            return;
+        }
+        if(comment.user == req.user.id){
+
+            // Before deleting the comment we are storing the post id so that we can 
+            // update the comments array from that database later.
+            let postId = comment.post;
+
+            // Remove the comment
+            comment.remove();
+
+            // This pull update the comments array 
+            Post.findByIdAndUpdate(postId, { $pull: {comments: req.params.id}}, function(err, post){
+                return res.redirect('back');
+            })
+        } else {
+            return res.redirect('back');
+        }
+    });
 }

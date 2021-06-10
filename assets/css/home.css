@@ -142,3 +142,7 @@ body{
 
 
 /* General Styling */
+i{
+    color: #122c91;
+    text-align: right;
+}

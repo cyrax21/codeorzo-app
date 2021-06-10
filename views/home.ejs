@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
     <link rel="stylesheet" href="/css/home.css">
     <title><%= title %></title>
 </head>
@@ -37,10 +38,13 @@
                                 <h6><span class="dot"></span><%= i.createdAt %></h6>
                             </div>
                             <p><%= i.content %></p>
+                            <!-- If locals.user=> if user is signed in & the delete function will be visible
+                                to the posts created by the user who signed in currently 
+                            -->
                             <% if(locals.user && locals.user.id==i.user.id) { %>
                                 <small>
                                     <a href="/posts/destroy/<%= i.id%>">
-                                        <i class="fas fa-trash"></i>
+                                        <i class="far fa-trash-alt"></i>
                                     </a>
                                 </small>
                             <% } %>
@@ -65,6 +69,13 @@
                                                 <small>
                                                     -<%= comment.user.name %>
                                                 </small>
+                                                <% if(locals.user && locals.user.id==comment.user.id) { %>
+                                                    <small>
+                                                        <a href="/comments/destroy/<%= comment.id%>">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>
+                                                    </small>
+                                                <% } %>
                                             </p>
                                         <% } %>
                                     </ul>
