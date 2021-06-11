@@ -26,15 +26,13 @@
                     <button type="submit">Add Comment</button>
                 </form>
             </div>
-
-            <div class="comments-style">
-                <ul id="post-comments-<%= i._id %>">
-                    <% for(let comment of i.comments) { %>
-                        <%- include('_comment',{comment: comment}) -%>
-                    <% } %>
-                </ul>
-            </div>
-
         <% } %>
+        <div class="comments-style">
+            <ul id="post-comments-<%= i._id %>">
+                <% for(let comment of i.comments) { %>
+                    <%- include('_comment',{comment: comment}) -%>
+                <% } %>
+            </ul>
+        </div>
     </div>
 </div>

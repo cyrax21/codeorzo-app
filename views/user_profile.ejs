@@ -10,31 +10,41 @@
 </head>
 <body>
     <div class="profile-style">
-        <div class="card-styling">
-            <img 
-                class="profile-pic"
-                src="https://cdn4.iconfinder.com/data/icons/social-communication/142/add_photo-512.png" 
-                alt="cover-pic"
-            >
-            <div class="card-info">
-                <div>
-                    Name: <%= profile_user.name %>
-                </div>
-                <div>
-                    Email: <%= profile_user.email %>
-                </div>
-            </div>
-        </div>
-        <div class="card-styling">
-            <div class="card-info">
-                <div class="about-me-styling">
-                    <p>About me :</p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-                    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-                    optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+        
+        <% if(user.id == profile_user.id ) { %>
+            <!-- if user matches show the form -->
+            <div class="card-styling">
+                <img 
+                    class="profile-pic"
+                    src="https://cdn4.iconfinder.com/data/icons/social-communication/142/add_photo-512.png" 
+                    alt="cover-pic"
+                >
+                <div class="card-info">
+                    <form action='/users/update/<%= profile_user._id%>' method='post'>
+                        <input type="text" name="name" placeholder="Update name here..." value="<%=profile_user.name %>" required>
+                        <input type="text" name="email" placeholder="Update email here..." value="<%=profile_user.email %>" required>
+                        <button type="submit">Update</button>
+                    </form>
                 </div>
             </div>
-        </div>
+        <% } else { %>
+            <!-- else show only the profile info -->
+            <div class="card-styling">
+                <img 
+                    class="profile-pic"
+                    src="https://cdn4.iconfinder.com/data/icons/social-communication/142/add_photo-512.png" 
+                    alt="cover-pic"
+                >
+                <div class="card-info">
+                    <div>
+                        Name: <%= profile_user.name %>
+                    </div>
+                    <div>
+                        Email: <%= profile_user.email %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
     </div>
 </body>
 </html>
