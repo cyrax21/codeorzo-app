@@ -7,14 +7,14 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 /* Feed/Middle/Post Styling */
 .feed-style{
     background-color:#FFFAFA;
     border: 1px solid black;
-    width: 900px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -46,7 +46,7 @@ body{
 }
 .button textarea{
     height: 120px;
-    width: 850px;
+    width: 90%;
     padding: 20px;
     margin: 10px;
     font-weight: bold;
@@ -57,7 +57,7 @@ body{
 .button input{
     padding: 10px;
     margin: 5px;
-    width: 100px;
+    width: 30%;
     background-color: #122c91;
     color: white;
     font-weight: bold;
@@ -88,7 +88,7 @@ body{
     margin-right: 3px;
 }
 .content-stylings{
-    width: 800px;
+    width: 90%;
     color: rgba(39, 39, 39, 0.788);
     border-bottom: 3px solid #122c91;
     padding-bottom: 10px;
@@ -108,7 +108,7 @@ body{
 
 /* Comment Section Styling */
 .comment-section{
-    width: 800px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,7 +121,7 @@ body{
     margin: 10px;
 }
 .comment-create-style input{
-    width: 600px;
+    width: 500px;
     height: 50px;
     font-size: 15px;
     border: 3px solid #122c91;

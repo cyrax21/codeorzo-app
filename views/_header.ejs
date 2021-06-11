@@ -17,7 +17,7 @@
         <div class="auth-btn">
             <% if(locals.user) { %>
                 <div>
-                    <a href="/users/profile">
+                    <a href="/users/profile/<%= user.id %>">
                         <%= user.name %> 
                     </a>
                 </div>

@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="home-style">
+        
         <div class="feed-style">
             <div id="feed-heading">
                 <p> Recent Post 🔥  </p>
@@ -30,63 +31,18 @@
             <!-- This is display all the post present in db -->
             <div id="posts-show">
                 <% for (let i of post_list) { %>
-                    <div class="post-style">
-                        <div class="content-stylings">
-                            
-                            <div>
-                                <h3><%= i.user.name %></h3>
-                                <h6><span class="dot"></span><%= i.createdAt %></h6>
-                            </div>
-                            <p><%= i.content %></p>
-                            <!-- If locals.user=> if user is signed in & the delete function will be visible
-                                to the posts created by the user who signed in currently 
-                            -->
-                            <% if(locals.user && locals.user.id==i.user.id) { %>
-                                <small>
-                                    <a href="/posts/destroy/<%= i.id%>">
-                                        <i class="far fa-trash-alt"></i>
-                                    </a>
-                                </small>
-                            <% } %>
-                        </div>
-                        <div class="comment-section">
-                            <% if(locals.user) { %>
-                                <div class="comment-create-style">
-                                    <form action="/comments/create" method="POST">
-                                        <input type="text" name="content" placeholder="Type comment here ... " required>
-                                        <!-- it will send the post id as a attribute-->
-                                        <input type="hidden" name="post" value="<%= i._id %>"> 
-                                        <button type="submit">Add Comment</button>
-                                    </form>
-                                </div>
-        
-                                <div class="comments-style">
-                                    <ul id="post-comments-<%= i._id %>">
-                                        <% for(let comment of i.comments) { %>
-                                            <p>
-                                                <%= comment.content %>
-                                                <br>
-                                                <small>
-                                                    -<%= comment.user.name %>
-                                                </small>
-                                                <% if(locals.user && locals.user.id==comment.user.id) { %>
-                                                    <small>
-                                                        <a href="/comments/destroy/<%= comment.id%>">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </a>
-                                                    </small>
-                                                <% } %>
-                                            </p>
-                                        <% } %>
-                                    </ul>
-                                </div>
-                            <% } %>
-                        </div>
-                    </div>
+                    <%- include('_post',{i: i}) -%>
                 <% } %>
-            </div>
+            </div>       
         </div>
-
+        <div id="user-friends">
+            <h4> Friends </h4>
+            <% for(let u of user_list) { %>
+                <p>
+                    <a href="/users/profile/<%= u.id%>"><%= u.name %></a>
+                </p>
+            <% } %>                    
+        </div> 
     </div>
 </body>
 </html>
