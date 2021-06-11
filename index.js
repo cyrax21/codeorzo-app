@@ -12,6 +12,9 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
 
+// Requiring connect-flash middleware
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
 
 // Middle Wares ( Have to be in order )
 app.use(express.urlencoded()); // parsing form data
@@ -48,6 +51,10 @@ app.use(passport.session());
 
 // this is middleware called everytime when any route is called. this is used to set the req.user details into res.local.user
 app.use(passport.setAuthenticatedUser);
+
+// We need to add it after session cookies because it uses session cookies
+app.use(flash());
+app.use(customMware.setFlash);
 
 // Added route for home
 app.use('/', require('./routes'));

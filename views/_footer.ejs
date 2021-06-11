@@ -19,9 +19,11 @@
             </div>
         </div>
         <div class='page-links'>
-            <div>
-                <a href="/users/profile/<%= user.id %>"> Profile </a> 
-            </div>
+            <% if(locals.user) { %>
+                <div>
+                    <a href="/users/profile/<%= locals.user.id %>"> Profile </a> 
+                </div>
+            <% } %>
             <div>
                 <a href="/"> home </a>
             </div>

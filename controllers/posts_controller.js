@@ -5,15 +5,28 @@ const Comment = require('../model/comment');
 module.exports.create = async function(req, res){
 
     try{
-        let newPost = await Post.create({
+        let post = await Post.create({
             // Passing Context
             content: req.body.content,  
             user: req.user._id,        // we are only storing the user id 
         });
-        console.log("new post : ", newPost);
+
+        // ! The request send by ajax is stored at 'req.xhr'  
+        if(req.xhr){
+            return res.status(200).json({
+                data: {
+                    post: post
+                },
+                message: "Post created!"
+            });
+        }
+        
+        req.flash('success', 'Post created successfully! ');
+
         return res.redirect('back');
+
     }catch(err){
-        console.log("Error: ", err);
+        req.flash('Error', err);
         return;
     }
     
@@ -30,12 +43,18 @@ module.exports.destroy = async function(req, res){
            //  Deleting the comments in the post
            // We are passing post id as query for deleting comments
             let comment = await Comment.deleteMany({ post: req.params.id });
+
+            req.flash('success', 'Post and Associated Comment deleted successfully!');
+
             return res.redirect('back');
-       } else {
-           return res.redirect('back');
-       }
+        } else {
+           
+            req.flash('Error', 'You can`t delete this post !');
+
+            return res.redirect('back');
+        }
     }catch(err){
-        console.log("Error: ", err);
+        req.flash('Error', err);
         return;
     }
 }

@@ -14,7 +14,7 @@ body{
 .feed-style{
     background-color:#FFFAFA;
     border: 1px solid black;
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -114,7 +114,6 @@ body{
     justify-content: center;
     align-items: flex-start;
 }
-
 .comment-create-style input, button{
     padding: 10px;
     border-radius: 5px;
@@ -137,8 +136,10 @@ body{
     border-radius: 5px;
 }
 
-
-
+/* Adding style to friends section */
+#user-friends{
+    width: 30%;
+}
 
 
 /* General Styling */

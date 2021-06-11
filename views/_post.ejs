@@ -1,38 +1,40 @@
-<div class="post-style">
-    <div class="content-stylings">
-        <div>
-            <h3><%= i.user.name %></h3>
-            <h6><span class="dot"></span><%= i.createdAt %></h6>
-        </div>
-        <p><%= i.content %></p>
-        <!-- If locals.user=> if user is signed in & the delete function will be visible
-            to the posts created by the user who signed in currently 
-        -->
-        <% if(locals.user && locals.user.id==i.user.id) { %>
-            <small>
-                <a href="/posts/destroy/<%= i.id%>">
-                    <i class="far fa-trash-alt"></i>
-                </a>
-            </small>
-        <% } %>
-    </div>
-    <div class="comment-section">
-        <% if(locals.user) { %>
-            <div class="comment-create-style">
-                <form action="/comments/create" method="POST">
-                    <input type="text" name="content" placeholder="Type comment here ... " required>
-                    <!-- it will send the post id as a attribute-->
-                    <input type="hidden" name="post" value="<%= i._id %>"> 
-                    <button type="submit">Add Comment</button>
-                </form>
+<li id="post-<%= i._id %>">
+    <div class="post-style">
+        <div class="content-stylings">
+            <div>
+                <h3><%= i.user.name %></h3>
+                <h6><span class="dot"></span><%= i.createdAt %></h6>
             </div>
-        <% } %>
-        <div class="comments-style">
-            <ul id="post-comments-<%= i._id %>">
-                <% for(let comment of i.comments) { %>
-                    <%- include('_comment',{comment: comment}) -%>
-                <% } %>
-            </ul>
+            <p><%= i.content %></p>
+            <!-- If locals.user=> if user is signed in & the delete function will be visible
+                to the posts created by the user who signed in currently 
+            -->
+            <% if(locals.user && locals.user.id==i.user.id) { %>
+                <small>
+                    <a class="delete-post-button" href="/posts/destroy/<%= i.id%>">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                </small>
+            <% } %>
+        </div>
+        <div class="comment-section">
+            <% if(locals.user) { %>
+                <div class="comment-create-style">
+                    <form action="/comments/create" method="POST">
+                        <input type="text" name="content" placeholder="Type comment here ... " required>
+                        <!-- it will send the post id as a attribute-->
+                        <input type="hidden" name="post" value="<%= i._id %>"> 
+                        <button type="submit">Add Comment</button>
+                    </form>
+                </div>
+            <% } %> 
+            <div class="comments-style">
+                <ul id="post-comments-<%= i._id %>">
+                    <% for(let comment of i.comments) { %>
+                        <%- include('_comment',{comment: comment}) -%>
+                    <% } %>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
+</li>

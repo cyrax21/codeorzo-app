@@ -91,13 +91,15 @@ module.exports.create = async function (req, res) {
 
 // Create a Post Request for user signin session
 module.exports.createSession = function (req, res) {
-  
+
+    req.flash('success', 'Successfully! Logged in!');
     return res.redirect("/");
 };
 
 // this is a function used to logout the user by removing cookies
 module.exports.destroySession = function (req, res) {
     req.logout();
+    req.flash('success', 'You have been logged out! ');
 
     return res.redirect("/");
 };
