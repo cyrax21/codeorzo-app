@@ -1,4 +1,16 @@
 {
+    
+
+    // TODO Add the this scipt into home.ejs to enable ajax. right now its not working properly
+    // !SSUE : req of ajax/xhr request for deleting is not working properly
+    //     <!-- importing this script for creating the comments -->
+    // <script src="/js/home_post_comments.js" ></script>
+    // <script src="/js/home_posts.js"></script>
+    
+    
+    
+    
+    
     // Method to submit the form data for new post using AJAX
     let createPost = function(){
         let newPostForm = $('#new-post-form'); //getting the form
@@ -23,7 +35,7 @@
                     new PostComments(data.data.post._id);
 
                     new Noty({
-                        theme: 'relax',
+                        theme: 'semanticui',
                         text: "Post published!",
                         type: 'success',
                         layout: 'topRight',
@@ -86,7 +98,7 @@
                 success: function(data){
                     $(`#post-${data.data.post_id}`).remove();
                     new Noty({
-                        theme: 'relax',
+                        theme: 'semanticui',
                         text: "Post Deleted",
                         type: 'success',
                         layout: 'topRight',

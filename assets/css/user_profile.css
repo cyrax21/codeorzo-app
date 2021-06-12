@@ -33,7 +33,37 @@ body{
     border-radius: 50%;
     margin: 10px;
 }
+
+/* Card Stylings */
 .card-info div{
     font-weight: bold;
     color: #f5487f;
+}
+
+.card-info form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-info form input{
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid lightgrey;
+    color: grey;
+    width: 100%;
+    border-radius: 10px;
+    font-family: monospace;
+    font-weight: bold;
+}
+.card-info form button{
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid white;
+    color: white;
+    background-color: #122c91;
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 10px;
 }

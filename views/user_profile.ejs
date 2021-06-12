@@ -10,19 +10,24 @@
 </head>
 <body>
     <div class="profile-style">
-        
         <% if(user.id == profile_user.id ) { %>
             <!-- if user matches show the form -->
             <div class="card-styling">
                 <img 
                     class="profile-pic"
-                    src="https://cdn4.iconfinder.com/data/icons/social-communication/142/add_photo-512.png" 
-                    alt="cover-pic"
+
+                    <% if(profile_user.avatar) { %>
+                        src="<%= profile_user.avatar %>" 
+                    <% } else { %>
+                        src="https://logodix.com/logo/360469.png"
+                    <% } %>
+                    alt="profile-pic-<%= profile_user.name %>"
                 >
                 <div class="card-info">
-                    <form action='/users/update/<%= profile_user._id%>' method='post'>
+                    <form action='/users/update/<%= profile_user._id%>' enctype="multipart/form-data" method='post'>
                         <input type="text" name="name" placeholder="Update name here..." value="<%=profile_user.name %>" required>
                         <input type="text" name="email" placeholder="Update email here..." value="<%=profile_user.email %>" required>
+                        <input type="file" name="avatar" placeholder="profile picture">
                         <button type="submit">Update</button>
                     </form>
                 </div>
@@ -32,8 +37,12 @@
             <div class="card-styling">
                 <img 
                     class="profile-pic"
-                    src="https://cdn4.iconfinder.com/data/icons/social-communication/142/add_photo-512.png" 
-                    alt="cover-pic"
+                    <% if(profile_user.avatar) { %>
+                        src="<%= profile_user.avatar %>" 
+                    <% } else { %>
+                        src="https://www.pinclipart.com/picdir/middle/8-82428_profile-clipart-generic-user-gender-neutral-head-icon.png"
+                    <% } %>
+                    alt="profile-pic-<%= profile_user.name %>"
                 >
                 <div class="card-info">
                     <div>
