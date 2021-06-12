@@ -11,7 +11,7 @@
             -->
             <% if(locals.user && locals.user.id==i.user.id) { %>
                 <small>
-                    <a class="delete-post-button" href="/posts/destroy/<%= i.id%>">
+                    <a class="delete-post-button" href="/posts/destroy/<%= i._id%>">
                         <i class="far fa-trash-alt"></i>
                     </a>
                 </small>
