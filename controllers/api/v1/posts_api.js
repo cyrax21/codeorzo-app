@@ -35,8 +35,8 @@ module.exports.destroy = async function(req, res){
         })
     }catch(err){
         console.log("****", err);
-        res.status(500).json({
-            message: "Internal Server Error !"
+        res.status(401).json({
+            message: "Unauthorized: you cannot delete the post"
         })
         return;
     }

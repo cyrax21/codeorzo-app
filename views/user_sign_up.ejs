@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/authenticate.css">
     <title><%= title %></title>
 </head>
 <body>
-    <h1>Sign-up</h1>
-    <form action="/users/create" method="POST">
-        <input type="text" name="name" placeholder="Enter Username :" required>
-        <input type="email" name="email" placeholder="Enter Email :" required>
-        <input type="password" name="password" placeholder="Enter Password :" required>
-        <input type="password" name="confirm_password" placeholder="Enter Confirm Password :" required>
-        <input type="submit" value="Sign Up">
-    </form>
+    <div id="container-style">
+        <div id="page-header">
+            <h3>Sign up</h3>
+        </div>
+        <div id="form-style">
+            <form action="/users/create" method="POST">
+                <input type="text" name="name" placeholder="Enter Username :" required>
+                <input type="email" name="email" placeholder="Enter Email :" required>
+                <input type="password" name="password" placeholder="Enter Password :" required>
+                <input type="password" name="confirm_password" placeholder="Enter Confirm Password :" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
