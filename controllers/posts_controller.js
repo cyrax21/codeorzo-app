@@ -1,6 +1,6 @@
 const Post = require('../model/post');
 const Comment = require('../model/comment');
-
+const postsMailer = require('../mailers/posts_mailer');
 // This controller for making a post
 module.exports.create = async function(req, res){
 
@@ -11,11 +11,13 @@ module.exports.create = async function(req, res){
             user: req.user._id,        // we are only storing the user id 
         });
 
+        // if we want to populate just the name of the user 
+        //(we'll not want to send the password in the API), this is how we do it!
+        post = await post.populate('user', 'name email').execPopulate();
+        postsMailer.newPost(post);
+
         // ! The request send by ajax is stored at 'req.xhr'  
         if (req.xhr){
-            // if we want to populate just the name of the user (we'll not want to send the password in the API), this is how we do it!
-            post = await post.populate('user', 'name').execPopulate();
-
             return res.status(200).json({
                 data: {
                     post: post

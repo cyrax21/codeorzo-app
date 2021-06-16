@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codeorzo | Notification</title>
+    <style>
+        #container{
+            background-color: lightgrey;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        p{
+            color: grey;
+            font-size: 25px;
+            padding: 20px;
+            font-weight: 100;
+        }
+        /* Footer Stylings */
+        #brand-name{
+            background-color: grey;
+        }
+        #brand-name div{
+            color: #f5487f;
+            font-weight: 900;
+            font-size: 20px;
+            font-family: monospace;
+        }
+        strong{
+            color: black;
+            font-weight: 400;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+        <p> Hi, <%= post.user.name %></p>
+        <div>
+            <p> 
+                Your post <strong>"<%= post.content %>"</strong>
+                just got published on codeorzo
+            </p>
+        </div>
+        <div id="brand-name">
+            <div>
+                &#60;Codeorzo🐶&#62;
+            </div>
+            <small id="author">
+                ~ by Joy deb
+            </small>
+        </div>
+    </div>
+  </body>
+</html>
