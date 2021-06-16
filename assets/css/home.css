@@ -1,6 +1,6 @@
 body{
     background-color:#FFFAFA;
-    font-family: monospace;
+    /* font-family: monospace; */
 }
 /* Main Container Styling */
 .home-style{
@@ -140,6 +140,19 @@ body{
 #user-friends{
     width: 30%;
 }
+#list_friends{
+    position: fixed;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5px;
+}
+#list_friends a{
+    /* text-decoration: none; */
+    color: rgb(56, 56, 56);
+    margin: 0px;
+    font-size: 20px;
+}
+
 
 
 /* General Styling */

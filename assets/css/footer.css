@@ -7,7 +7,6 @@
     align-items: center;
     padding: 10px;
     height: 100px;
-    font-family: monospace;
     margin-top: auto;
 }
 /* 1. Brand name Styling */
@@ -15,6 +14,7 @@
     color: #f5487f;
     font-weight: bold;
     font-size: 30px;
+    font-family: monospace;
 }
 .author{
     font-size: 15px;

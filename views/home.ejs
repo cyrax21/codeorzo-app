@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
     <link rel="stylesheet" href="/css/home.css">
     <title><%= title %></title>
 </head>
@@ -36,12 +35,14 @@
             </div>       
         </div>
         <div id="user-friends">
-            <h4> Friends </h4>
-            <% for(let u of user_list) { %>
-                <p>
-                    <a href="/users/profile/<%= u.id%>"><%= u.name %></a>
-                </p>
-            <% } %>                    
+            <div id='list_friends'>
+                <p> Friends </p>
+                <% for(let u of user_list) { %>
+                    <p>
+                        <a href="/users/profile/<%= u.id%>"><%= u.name %></a>
+                    </p>
+                <% } %> 
+            </div>                   
         </div> 
     </div>
 </body>

@@ -1,8 +1,8 @@
+/* Main Body Styling */
 body {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-    font-family: monospace;
+	animation: gradient 10s ease infinite;
 }
 
 @keyframes gradient {
@@ -17,30 +17,40 @@ body {
 	}
 }
 
+/* how to arrange object styling */
 #container-style{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+/* Main Header */
 #page-header{
     color: white;
     font-weight: 900;
     font-size: 30px;
     letter-spacing: 20px;
+    margin: 0px;
 }
 h3{
     text-shadow: 5px 3px #f5487f;
 }
+
+/* Form Styling  */
 #form-style{
     background-color: rgb(231, 231, 231);
     border-radius: 5px;
     border: 2px solid #122c91;
-    margin: 50px;
+    margin: 20px;
+    margin-top: 0;
     padding: 10px;
     box-shadow: -5px -5px 30px 5px #f5487f, 5px 5px 30px 5px #122c91;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-
 #form-style form{
     display: flex;
     flex-direction: column;
@@ -69,7 +79,23 @@ form button{
     margin: 10px;
     border: 2px solid #122c91;
     box-shadow: 0 0 5px 3px #122c91;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     color: grey;
+}
+
+/* Authentication with Google Styling */
+.google-auth{
+    background-color: white;
+    text-align: center;
+    box-shadow: 2px 2px 2px 1px grey;
+    padding: 10px;
+}
+.google-auth a{
+    text-decoration: none;
+    color: grey;
+    margin: 2px;
+}
+.google-auth:hover{
+    box-shadow: 1px 1px 1px 1px lightgrey;
 }
