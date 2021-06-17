@@ -10,6 +10,7 @@
 <body>
     <div class="home-style">
         
+        <!-- !Showing the feed -->
         <div class="feed-style">
             <div id="feed-heading">
                 <p> Recent Post 🔥  </p>
@@ -34,6 +35,7 @@
                 <% } %>
             </div>       
         </div>
+        <!-- ! Showing all the friends
         <div id="user-friends">
             <div id='list_friends'>
                 <p> Friends </p>
@@ -43,7 +45,20 @@
                     </p>
                 <% } %> 
             </div>                   
-        </div> 
+        </div>  -->
+        <!-- ! showing all the Friends -->
+        <div id="app-users">
+            <div id='list_users'>
+                <p> Users </p>
+                <% for(let u of user_list) { %>
+                    <p>
+                        <a href="/users/profile/<%= u.id%>"><%= u.name %></a>
+                    </p>
+                <% } %> 
+            </div>                   
+        </div>
+        <%- include('_chatbox') %>
     </div>
+    
 </body>
 </html>

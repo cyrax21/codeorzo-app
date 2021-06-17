@@ -1,6 +1,9 @@
+.body {
+    background-color: #e0dede;
+}
 /* whole footer styling */
 .footer-style{
-    background-color: #e0dede;
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

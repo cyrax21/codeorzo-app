@@ -10,6 +10,24 @@ body{
     align-items: flex-start;
 }
 
+/* User show styling */
+#app-users{
+    width: 20%;
+}
+#list_users{
+    /* position: fixed; */
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5px;
+}
+#list_users a{
+    text-decoration: none;
+    color: rgb(56, 56, 56);
+    margin: 0px;
+    font-size: 20px;
+}
+
+
 /* Feed/Middle/Post Styling */
 .feed-style{
     background-color:#FFFAFA;
@@ -105,14 +123,36 @@ body{
 .contact-styling p{
     margin: 10px;
 }
+/* Like and comments count */
+
+.post-details{
+    display: flex;
+    flex-direction: row;
+}
+.post-details>div{
+    border: 1px solid #122c91;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px 1px #122c91;
+    border-radius: 20px;
+}
+.post-details div i{
+    padding: 5px;
+}
+.post-details div:hover{
+    box-shadow: 0px 0px 0px 0px lightgrey;
+}
 
 /* Comment Section Styling */
 .comment-section{
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    border-top: 3px solid #122c91;
 }
 .comment-create-style input, button{
     padding: 10px;
@@ -135,9 +175,20 @@ body{
     border: 1px solid grey;
     border-radius: 5px;
 }
+.comments-style{
+    width: 100%;
+}
+.comment-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    border-bottom: 1px solid #122c91;
+}
 
 /* Adding style to friends section */
-#user-friends{
+/* #user-friends{
     width: 30%;
 }
 #list_friends{
@@ -147,11 +198,11 @@ body{
     margin: 5px;
 }
 #list_friends a{
-    /* text-decoration: none; */
+    text-decoration: none;
     color: rgb(56, 56, 56);
     margin: 0px;
     font-size: 20px;
-}
+} */
 
 
 
@@ -159,4 +210,8 @@ body{
 i{
     color: #122c91;
     text-align: right;
+}
+a{
+    text-decoration: none;
+    color: #122c91;
 }

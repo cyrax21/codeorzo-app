@@ -14,6 +14,9 @@ router.use('/posts', require('./posts'));
 // Added Router for comments related routes
 router.use('/comments', require('./comments'));
 
+// Added Router for Likes related routes
+router.use('/likes', require('./likes'));
+
 router.use('/api', require('./api'));
 
 module.exports = router;

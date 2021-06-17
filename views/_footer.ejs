@@ -9,39 +9,41 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="footer-style">
-        <div class="brand-name">
-            <div>
-                &#60;Codeorzo🐶&#62;
-            </div>
-            <div class="author">
-                ~ by Joy deb
-            </div>
-        </div>
-        <div class='page-links'>
-            <% if(locals.user) { %>
+    <div class="body">
+        <div class="footer-style">
+            <div class="brand-name">
                 <div>
-                    <a href="/users/profile/<%= locals.user.id %>"> Profile </a> 
+                    &#60;Codeorzo🐶&#62;
                 </div>
-            <% } %>
-            <div>
-                <a href="/"> home </a>
+                <div class="author">
+                    ~ by Joy deb
+                </div>
             </div>
-        </div>
-        <div class='social-media'>
-            <div>
-                Follow us On :
+            <div class='page-links'>
+                <% if(locals.user) { %>
+                    <div>
+                        <a href="/users/profile/<%= locals.user.id %>"> Profile </a> 
+                    </div>
+                <% } %>
+                <div>
+                    <a href="/"> home </a>
+                </div>
             </div>
-            <div>
-                <a href="">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="">
-                    <i class="fab fa-github"></i>
-                </a>
+            <div class='social-media'>
+                <div>
+                    Follow us On :
+                </div>
+                <div>
+                    <a href="">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

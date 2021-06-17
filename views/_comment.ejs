@@ -1,14 +1,37 @@
-<p>
-    <%= comment.content %>
-    <br>
-    <small>
-        -<%= comment.user.name %>
-    </small>
-    <% if(locals.user && locals.user.id==comment.user.id) { %>
-          <small>
-            <a href="/comments/destroy/<%= comment.id%>">
-                <i class="fas fa-trash-alt"></i>
-            </a>
+<div class="comment-content">
+    <div>
+        <%= comment.content %>
+        <br>
+        <small>
+            -<%= comment.user.name %>
         </small>
-    <% } %>
-</p>
+        <% if(locals.user && locals.user.id==comment.user.id) { %>
+            <small>
+                <a href="/comments/destroy/<%= comment._id%>" >
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </small>
+        <% } %>
+    </div>
+    <div class="comment-options">
+        <div>
+            <% if( locals.user ){ %>
+                <a href="/likes/toggle/?id=<%= comment._id %>&type=Comment">
+                    <i class="far fa-thumbs-up"></i>
+                    <% if(comment.likes.length > 0) { %>
+                        <%= comment.likes.length %>
+                    <% } %>
+                    Like
+                </a>
+            <% } else { %>
+                <div>
+                    <i class="far fa-thumbs-up"></i>
+                    <% if(comment.likes.length > 0) { %>
+                        <%= comment.likes.length %>
+                    <% } %>
+                    Like
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>

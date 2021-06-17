@@ -1,5 +1,6 @@
 const Post = require('../model/post');
 const Comment = require('../model/comment');
+const Like = require('../model/like');
 const postsMailer = require('../mailers/posts_mailer');
 // This controller for making a post
 module.exports.create = async function(req, res){
@@ -43,6 +44,11 @@ module.exports.destroy = async function(req, res){
         let post = await Post.findById(req.params.id);
 
         if(post.user == req.user.id){
+
+            // delete the associated likes for the post and all its comments likes too
+            await Like.deleteMany({likeable: post, onModel: 'Post'});
+            await Like.deleteMany({_id: {$in: post.comments}});
+
             post.remove(); // Used to remove the Object from data
 
            //  Deleting the comments in the post

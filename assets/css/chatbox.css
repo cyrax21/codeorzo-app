@@ -1,0 +1,89 @@
+/* Main body styling */
+.chatbox{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    /* height: 50%; */
+    height: 400px;
+    width: 300px;
+    /* width: 20%; */
+    border: 1px solid #122c91;
+    border-radius: 5px;
+    /* box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2); */
+}
+/*  Heading styling */
+.chat-heading{
+    background-color: #122c91;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    overflow: hidden;
+    height: 10%;
+}
+.chat-heading div{
+    color: white;
+}
+.chat-heading a i{
+    color: white;
+}
+
+/* Chats Styling */
+.chat-show{
+    min-height: 70%;
+    /* border-bottom: 1px solid #122c91; */
+}
+.chat-show div{
+    display: inline-block;
+}
+.incoming{
+    padding: 5px;
+    background-color: #FFF0F5;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    width: 50%;
+    color: grey;
+    border: 2px solid grey;
+    margin: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.outgoing{
+    padding: 5px;
+    background-color: #F0FFF0;
+    float: right;
+    text-align: center;
+    border-radius: 20px;
+    width: 50%;
+    color: grey;
+    border: 2px solid grey;
+    margin: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Typing area styling */
+.type-area form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.type-area form input{
+    width: 70%;
+    padding: 10px;
+    border: 5px solid #122c91;
+    color: #122c91;
+    overflow: scroll;
+    font-size: 20px;
+}
+.type-area form button{
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    border: 5px solid #122c91;
+    background-color: #122c91;
+    color: white;
+    font-weight: 900;
+}

@@ -1,5 +1,6 @@
 const Comment = require('../model/comment');
 const Post = require('../model/post');
+const Like = require('../model/like');
 const commentsMailer = require('../mailers/comments_mailer');
 module.exports.create = async function(req, res) {
 
@@ -34,7 +35,7 @@ module.exports.create = async function(req, res) {
             res.redirect('/');
         }
     }catch(err){
-        req.flash('Error', err);
+        req.flash('Error', err); 
         return;
     }
 };
@@ -55,6 +56,9 @@ module.exports.destroy = async function(req, res) {
 
             // This pull update the comments array 
             let post = await Post.findByIdAndUpdate(postId, { $pull: {comments: req.params.id}});
+
+            // destroy the associated like from the comment
+            await Like.deleteMany({likeable: comment._id, onModel: 'Comment'});
 
             // send the comment id which was deleted back to the views
             if (req.xhr){

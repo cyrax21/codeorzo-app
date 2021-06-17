@@ -9,6 +9,7 @@ module.exports.profile = async function (req, res) {
         return res.render("user_profile", {
             title: "Codeorzo | Profile ",
             profile_user: user,
+            
         });
 
     } catch (err) {

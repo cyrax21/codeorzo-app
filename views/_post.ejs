@@ -15,7 +15,31 @@
                         <i class="far fa-trash-alt"></i>
                     </a>
                 </small>
-            <% } %>
+            <% } %> 
+        </div>
+        <div class="post-details">
+            <div>
+                <% if( locals.user ){ %>
+                    <a href="/likes/toggle/?id=<%= i._id%>&type=Post" >
+                        <i class="far fa-thumbs-up"></i>
+                        <% if(i.likes.length > 0) { %>
+                            <%= i.likes.length %>
+                        <% } %>
+                        Like
+                    </a>
+                <% } else { %>
+                        <i class="far fa-thumbs-up"></i>
+                        <% if(i.likes.length > 0) { %>
+                            <%= i.likes.length %>
+                        <% } %>
+                        Like
+                <% } %>
+            </div>
+            <div>
+                <i class="far fa-comment"></i>
+                <%=i.comments.length%>
+                Comment
+            </div>
         </div>
         <div class="comment-section">
             <% if(locals.user) { %>
