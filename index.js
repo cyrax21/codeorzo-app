@@ -1,10 +1,12 @@
 // Requiring all necessary libraries.
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const app = express();
 const port = 8000;
 const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
+
 
 // used for session cookie
 const session = require('express-session');
@@ -17,6 +19,12 @@ const MongoStore = require('connect-mongo');
 // Requiring connect-flash middleware
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
+
+// setup the chat server to be used with socket.io
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat server is listening on port 5000');
 
 // Middle Wares ( Have to be in order )
 app.use(express.urlencoded()); // parsing form data

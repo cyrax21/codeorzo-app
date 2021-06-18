@@ -1,0 +1,26 @@
+#container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    color: grey;
+}
+/* Footer Stylings */
+#brand-name{
+    height: 50px;
+    background-color: lightgrey;
+}
+#brand-name div{
+    color: #f5487f;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: monospace;
+}
+#author{
+    font-size: 10px;
+    text-align: right;
+}
