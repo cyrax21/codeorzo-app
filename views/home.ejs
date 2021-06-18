@@ -57,7 +57,7 @@
                 <% } %> 
             </div>                   
         </div>
-        <%- include('_chatbox') %>
+        <!-- <%- include('_chatbox') %> -->
     </div>
     <!-- CHANGE :: import the script file for toggle likes, also run it over for the already present posts and comments on the page
     <script src="js/toggle_likes.js"></script>
@@ -68,12 +68,12 @@
         });
     </script> -->
     <!-- Socket io cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
     <script src="/js/chat_engine.js"></script>
     <% if(locals.user){ %>
         <script>
             new ChatEngine('user-chat-box', '<%= locals.user.email %>' )
         </script>
-    <% } %>
+    <% } %> -->
 </body>
 </html>

@@ -1,5 +1,6 @@
 // Requiring all necessary libraries.
 const express = require('express');
+const env = require('./config/environment');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const app = express();
@@ -21,15 +22,15 @@ const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
 // setup the chat server to be used with socket.io
-const chatServer = require('http').Server(app);
-const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
-chatServer.listen(5000);
-console.log('chat server is listening on port 5000');
+// const chatServer = require('http').Server(app);
+// const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+// chatServer.listen(5000);
+// console.log('chat server is listening on port 5000');
 
 // Middle Wares ( Have to be in order )
 app.use(express.urlencoded()); // parsing form data
 app.use(cookieParser()); // for using cookie 
-app.use(express.static('assets')); // adding static files in our project
+app.use(express.static(env.asset_path)); // adding static files in our project
 app.use(expressLayouts); // ?
 
 // make the uploads path available to the browser
@@ -47,7 +48,7 @@ app.set('views', './views');
 app.use(session({
     name: 'codeorzo',
     // TODO change the secret code before deploying it
-    secret: 'something', // The cookie stored is encrypted from this secret string
+    secret: env.session_cookie_key, // The cookie stored is encrypted from this secret string
     saveUninitialized: false, // if user not logged in, do you need to store any info in the cookies (false means no)
     resave: false, // this tells whether you want to re-write the user info inside the cookie
     cookie: {
