@@ -10,11 +10,11 @@ It is a social media website which offers many cool features like a chat engine,
 Home Page
 ![Home Page](uploads/home_header.png "Home Page")
 
-Profile
-![Profile Page](uploads/proifile.png "Profile")
-
-Edit profile page
+profile page
 ![Edit Profile Page](uploads/edit_profile.png "Edit profile page")
+
+Edit profile
+![Profile Page](uploads/proifile.png "Profile")
 
 Sign Up Page
 ![Sign Up Page](uploads/sign-up-page.png "Sign Up Page")
