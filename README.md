@@ -10,7 +10,7 @@ It is a social media website which offers many cool features like a chat engine,
 Home Page
 ![Home Page](uploads/home_header.png "Home Page")
 
-profile page
+Profile page
 ![Edit Profile Page](uploads/edit_profile.png "Edit profile page")
 
 Edit profile
