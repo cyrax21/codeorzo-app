@@ -17,7 +17,7 @@ Edit profile
 ![Profile Page](uploads/proifile.png "Profile")
 
 Mailer Notification on Post or Comment on Codeorzo Platform
-![Mailer Notification](uploads/scrnli_6_18_2021_11-01-29 PM.png "Mailer Notification")
+![Mailer Notification](uploads/Mailer_Notification.png "Mailer Notification")
 
 scrnli_6_18_2021_11-01-29 PM.png
 
