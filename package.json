@@ -4,8 +4,8 @@
   "description": "social media application exclusively for coders",
   "main": "index.js",
   "scripts": {
-    "start": "node fileName.js",
-    "start:dev": "nodemon fileName.js"
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
   },  
   "keywords": [
     "social"
