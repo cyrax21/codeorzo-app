@@ -7,10 +7,18 @@ It is a social media website which offers many cool features like a chat engine,
 
 ## Screenshots
 
-![Home Page](uploads/home_header.PNG "Home Page")
+Home Page
+![Home Page](uploads/home_header.png "Home Page")
+
+Profile
 ![Profile Page](uploads/proifile.png "Profile")
+
+Edit profile page
 ![Edit Profile Page](uploads/edit_profile.png "Edit profile page")
+
+Sign Up Page
 ![Sign Up Page](uploads/sign-up-page.png "Sign Up Page")
+
 
 
 ## Technologies Stack:
